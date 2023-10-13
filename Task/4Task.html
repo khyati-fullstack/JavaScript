@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .Box {
+            margin: 0 auto;
+            width: 500px;
+            height: 250px;
+            text-align: center;
+            border: 2px solid black;
+        }
+        .box0 {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 50px;
+        }
+        input {
+            align-items: right;
+        }
+        button {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+    <div class="Box">
+        <div class="box0"><span>Name</span><input type="text" id="name" name="name" onblur="handleNameValidation(this, 'error1')"><span id="error1"></span></div>
+        <div class="box0"><span>Email ID</span><input type="email" id="email" name="email" onblur="handleEmailValidation(this, 'error2')"><span id="error2"></span></div>
+        <div class="box0"><span>Mobile No</span><input type="number" id="mobile" name="mobile" onblur="handleMobileValidation(this, 'error3')"><span id="error3"></span></div>
+        <div class="box0"><span>Password</span><input type="password" id="password" name="password" onblur="handlePasswordValidation(this, 'error4')"><span id="error4"></span></div>
+        <button>submit</button>
+    </div>
+    </form>
+
+    <script>
+        function handleNameValidation(nm, spnid) {
+            let name = /^(?=.*[a-zA-Z]{1,})(?=.*[\d]{0,})[a-zA-Z0-9]{1,15}$/;
+            if (name.test(nm.value)){
+                document.getElementById(spnid).innerText = "";
+            }
+            else {
+                document.getElementById(spnid).innerText = "*Reqired*";
+                document.getElementById(spnid).style.color = "red"
+            }
+        
+        }
+        function handleEmailValidation(em, spnid) {
+            let email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (email.test(em.value)){
+                document.getElementById(spnid).innerText = "";
+            }
+            else {
+                document.getElementById(spnid).innerText = "*Reqired*";
+                document.getElementById(spnid).style.color = "red";
+            }
+        }
+        function handleMobileValidation(mo, spnid) {
+            let mobile = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+            if (mobile.test(mo.value)){
+                document.getElementById(spnid).innerText = "";
+            }
+            
+            else {
+                document.getElementById(spnid).innerText = "*Reqired*";
+                document.getElementById(spnid).style.color = "red";
+            }
+        }
+        function handlePasswordValidation(pw, spnid) {
+            let password = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
+            if (password.test(pw.value)){
+                document.getElementById(spnid).innerText = ""
+            }
+            else {
+                document.getElementById(spnid).innerText = "*Reqired*";
+                document.getElementById(spnid).style.color = "red";
+            }
+        };
+
+    </script>
+</body>
+</html>
+        

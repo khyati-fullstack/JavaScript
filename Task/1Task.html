@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <style>
+        .box {
+        width: 250px;
+        margin: 0 auto;
+        border: 10px solid black;
+      }
+      input {
+        margin: 20px;
+      }
+      button {
+        margin: 20px;
+        padding: 10px 30px;
+        background-color: gold;
+        color: black;
+      }
+    </style>
+</head>
+<body>
+    <input type="text" name="first" id="first" value=""> 
+    <input type="text" name="second" id="second" value="">
+    <button onclick="addition()">click me</button>
+    <script>
+        function addition() {
+            // alert ("+");
+            let first = Number(document.getElementById("first").value);
+            let second = Number(document.getElementById("second").value);
+            let total = Number(first + second);
+            alert(total);
+        }
+    </script>
+</body>
+</html>
