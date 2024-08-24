@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>method overriding</h1>
+    <script>
+        class Parent
+        {
+            display()
+            {
+                console.log("hello parent class is here");
+            }
+        }
+        class Child extends Parent
+        {
+            display()
+            {
+                super.display();
+                console.log("hello");
+            }
+        }
+        let obj = new Child();
+        obj.display();
+    </script>
+</body>
+</html>

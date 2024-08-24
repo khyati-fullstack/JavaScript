@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .myClass
+        {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello welcome to js</h1>
+
+    <button id="btnid">Change H1</button>
+    <script>
+        document.getElementById("btnid").addEventListener("click",function(){
+            console.log("button clicked");
+            var myh1 = document.querySelector("h1");
+
+            myh1.classList.add("myClass");
+        })
+    </script>
+</body>
+</html>

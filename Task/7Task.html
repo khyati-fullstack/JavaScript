@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            margin: 20px;
+            padding: 20px;
+            border: 3px solid black;
+        }
+        .para1{
+            padding: 10px 90px 30px;
+        }
+        textarea {
+            width: 100%;
+        }
+        .btn{
+            /* border: 1px solid black; */
+            width: 55%;
+            margin: 0 auto;
+            padding: 15px 5px;
+        }
+        .btn button{
+            width: 200px;
+            padding: 5px;
+            margin: 0px 5px;
+        }
+        #output{
+            border: 1px solid black;
+            margin: 0 auto;
+            width: 30%;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="para1">
+            <textarea id="para"  rows="8" cols="45"></textarea>
+        </div>
+        <div class="btn">
+            <button onclick="countWords()">Word Count</button>
+            <button onclick="characterCount()">Character Count</button>
+            <button onclick="upperCase()">Uppercase</button> <br><br>
+            <button onclick="lowerCase()">Lowercase</button>
+            <button onclick="removeSpace()">Remove space</button>
+            <button onclick="replace()">Replace</button>
+            <!-- <button onclick="clear()">Clear</button> -->
+        </div>
+        <div id="output"></div>
+    </div>
+    <script>
+            function characterCount() {
+            let abc = document.getElementById("para").value;
+            // alert(abc.length);
+            // console.log(abc.length);
+            let count = (abc.length);
+            document.getElementById("output").innerText = count;
+            };
+
+            function upperCase() {
+                let abc = document.getElementById("para").value;
+                // alert(abc.length);
+                // console.log(abc.toUpperCase());
+                let count = (abc.toUpperCase());
+                document.getElementById("output").innerText = count;
+
+            };
+
+            function lowerCase() {
+                let abc = document.getElementById("para").value;
+                // alert(abc.length);
+                // console.log(abc.toLowerCase());
+                let count = (abc.toLowerCase());
+                document.getElementById("output").innerText = count;
+            };
+            
+            function removeSpace() {
+                let abc = document.getElementById("para").value;
+                // alert(abc.length);
+                // console.log(abc.trim());
+                let count = (abc.replace(/\s+/g, ''));
+                document.getElementById("output").innerText = count;
+            };
+
+            function replace() {
+                let abc = document.getElementById("para").value;
+                // alert(abc.length);
+                // console.log(abc.trim());
+                let count = (abc.replace());
+                document.getElementById("output").innerText = count;
+            };
+            let string = "Khyati Patel Khyati Patel";
+            console.log(string.replace())
+
+    
+    </script>
+</body>
+</html>

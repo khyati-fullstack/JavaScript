@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label><input type="radio" name="name" value="John"> John</label><br>
+        <label><input type="radio" name="name" value="Jane"> Jane</label><br>
+        <label><input type="radio" name="name" value="Bob"> Bob</label><br>
+    </form>
+    
+    <div id="display" class="hidden"></div>
+    
+    <script>
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        const display = document.getElementById('display');
+    
+        radioButtons.forEach(button => {
+            button.addEventListener('change', function() {
+                display.textContent = this.value;
+                display.classList.remove('hidden');
+            });
+        });
+    </script>
+    
+</body>
+</html>

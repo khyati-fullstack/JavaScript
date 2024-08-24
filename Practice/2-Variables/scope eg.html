@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1 . Globle Scope (var)</h1>
+    <p>- A JavaScript global variable is accessible from any function. <br> - Global scope contains all of the things defined outside of all code blocks.</p>
+
+    <h2><u>var:</u></h2>
+    <h4>eg.1</h4>
+
+    <span>
+        var color = "pink"; <br>
+        { <br>
+            var color = "blue"; <br>
+            console.log(color); <br>
+        } <br>
+        console.log(color); <br> <br>
+
+        ans :- blue, blue
+
+    </span>
+
+    <h4>eg.2</h4>
+
+    <span>
+        var color = "pink"; <br>
+        { <br>
+            <!-- var color = "blue"; <br> -->
+            console.log(color); <br>
+        } <br>
+        console.log(color); <br> <br>
+
+        ans :- pink, pink
+
+    </span>
+
+    <h4>eg.3</h4>
+
+    <span>
+        var color = "blue"; <br>
+        { <br>
+            var color = "blue"; <br>
+            console.log(color); <br>
+        } <br>
+        console.log(color); <br> <br>
+
+        ans :- blue, blue
+
+    </span>
+
+    <!-- <script>
+        var color = "pink";
+        {
+            var color = "blue";
+            console.log(color);
+        }
+        console.log(color);
+
+        var color = "pink";
+        {
+            var color = "blue";
+            console.log(color);
+        }
+        console.log(color);
+
+        var color = "pink";
+        {
+            var color = "blue";
+            console.log(color);
+        }
+        console.log(color);
+    </script> -->
+
+    <hr>
+
+    <h1>2 . local Scope (let , const)</h1>
+    <p>- Local scope contains things defined inside code blocks. <br> - A local variable has local scope. <br>- A local variable is only accessible where it’s declared.</p>
+
+    <h2><u>let:</u></h2>
+    <span>
+        <h4>eg.1</h4>
+
+        { <br>
+        let name = "Khyati"; <br>
+        console.log(name); <br>
+        } <br> <br>
+        ans :- Khyati
+    
+        <h4>eg.2</h4>
+
+        let name = "Khyati"; <br>
+        { <br>
+        console.log(name); <br>
+        } <br> <br>
+        ans :- Khyati
+    
+        <h4>eg.3</h4>
+
+        let no = "123"; <br>
+        { <br>
+        console.log(no); <br>
+        } <br>
+        console.log(no); <br> <br>
+        ans :- 123, 123
+    
+        <h4>eg.4</h4>
+
+        let num = "123"; <br>
+        { <br>
+        let num = 567 <br>
+        console.log(num); <br>
+        } <br>
+        console.log(num); <br> <br>
+        ans :- 123 , 567
+
+        <h4>eg.5</h4>
+
+        let date = "1 jan 2024"; <br>
+        { <br>
+        let date = "1 jan 2024"; <br>
+        console.log(date); <br>
+        } <br>
+        console.log(date); <br> <br>
+        ans :- 1 jan 2024 , 1 jan 2024
+    </span>
+
+    <!-- <script>
+        {
+        let name = "Khyati";
+        console.log(name);
+        }
+
+        let name = "Khyati";
+        {
+        console.log(name);
+        }
+
+        let no = "123";
+        {
+        console.log(no);
+        }
+        console.log(no);
+
+        let num = "123";
+        {
+        let num = 567
+        console.log(num);
+        }
+        console.log(num);
+
+        let date = "1 jan 2024";
+        {
+        let date = "1 jan 2024";
+        console.log(date);
+        }
+        console.log(date); -->
+
+    </script>
+
+    <h2><u>const:</u></h2>
+    <span>
+        <h4>eg.1</h4>
+
+        { <br>
+        const name = "Khyati"; <br>
+        console.log(name); <br>
+        } <br> <br>
+        ans :- Khyati
+    
+        <h4>eg.2</h4>
+
+        const name = "Khyati"; <br>
+        { <br>
+        console.log(name); <br>
+        } <br> <br>
+        ans :- Khyati
+    
+        <h4>eg.3</h4>
+
+        const no = "123"; <br>
+        { <br>
+        console.log(no); <br>
+        } <br>
+        console.log(no); <br> <br>
+        ans :- 123, 123
+    
+        <h4>eg.4</h4>
+
+        const num = "123"; <br>
+        { <br>
+        const num = 567 <br>
+        console.log(num); <br>
+        } <br>
+        console.log(num); <br> <br>
+        ans :- 123 , 567
+
+        <h4>eg.5</h4>
+
+        const date = "1 jan 2024"; <br>
+        { <br>
+        const date = "1 jan 2024"; <br>
+        console.log(date); <br>
+        } <br>
+        console.log(date); <br> <br>
+        ans :- 1 jan 2024 , 1 jan 2024
+    </span>
+
+    <script>
+    
+        {
+        const name = "Khyati";
+        console.log(name);
+        }
+
+        const name = "Khyati";
+        {
+        console.log(name);
+        }
+
+        const no = "123";
+        {
+        console.log(no);
+        }
+        console.log(no);
+
+        const num = "123";
+        {
+        const num = 567
+        console.log(num);
+        }
+        console.log(num);
+
+        const date = "1 jan 2024";
+        {
+        const date = "1 jan 2024";
+        console.log(date);
+        }
+        console.log(date);
+    </script>
+
+</body>
+</html>

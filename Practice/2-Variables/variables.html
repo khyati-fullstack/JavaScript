@@ -8,27 +8,65 @@
 <body>
 
     <h1>Variables</h1>
-    <p id="demo"></<span>>
+    <h4>explain with example</h4>
+
+    <span>1. var = before ES6 / globle scope</span>
+
+    <h4>eg:</h4>
+    <span>
+    var a; // Declaration  <br>
+    var a = "abc"// Declaration and initialization <br>
+    var a = "abc" // Re-Declaration is possible <br>
+    name = "Khyati Patel" //  Re-Assignament is possible <br>
+    console.log(a) .... {Ans - abc}<br>
+    console.log(name) .... {Ans - Khyati Patel}<br>
+    console.log(a,name) .... {Ans -abc, Khyati Patel}<br>
+    </span>
+
+    <hr>
+    <span>2. let = local/block scope</span>
+    <p>- Local scope contains things defined inside code blocks. <br> - A local variable has local scope. <br> - A local variable is only accessible where it’s declared.</p>
+
+    <h4>eg:1</h4>
+
+    <span>
+    let mark = "90" // Declaration and Assignament <br>
+    let mark = "50"  // Re-Declaration is not possible <br>
+    mark = "90" //  Re-Assignament is possible <br>
+    console.log(mark) .... {Ans - 90}
+    </span>
+
+    <hr>
+    <span>3. const = local/block scope</span>
+
+    <h4>eg:</h4>
+    <span>
+        const color = "green" // Declaration and Assignament <br>
+        const color = "blue" // Re-Declaration is not possible  <br>
+        color = "yellow" //  Re-Assignament is not possible <br> 
+        console.log(color) .... {Ans - green} <br>
+    </span>
 
     <script>
+        var a; // Declaration
+        var a = "abc"// Declaration and initialization
+        var a = "abc" // Re-Declaration is possible
+        name = "Khyati Patel" //  Re-Assignament is possible
+        console.log(a)
+        console.log(name)
+        console.log(a,name)
 
 
-    var name = "aaa";
-    var name = "bbb";
-    name = "ccc";
-    console.log(name);
 
-    let num = 50;
-    // let num = "kk";
-    num = 20;
-    console.log(num);
-    alert(num);
+        let mark = "90" // Declaration and initialization
+        // let mark = "50"  // Re-Declaration is not possible 
+        mark = "90" //  Re-Assignament is possible 
+        console.log(mark)
 
-    // const Num_let = "a1b2";
-    // const Num_let = "A1B2";
-    Num_let = "A1b2";
-    console.log (Num_let)
-
+        const color = "green" // Declaration and initialization
+        // const color = "blue" // Re-Declaration is not possible 
+        // color = "yellow" //  Re-Assignament is not possible 
+        console.log(color)
 
     </script>
     <!-- <script src="script.js"></script> -->

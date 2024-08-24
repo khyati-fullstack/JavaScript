@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = 100
+        let num2 = 200
+
+        let waitingResponse = new Promise((resolve,reject) => {
+            resolve([num1 + 500 , num2 + 300]);
+        });
+        console.log(num1 + num2);
+        waitingResponse.then((resolveValue)=> {
+            console.log(resolveValue[0]);
+            console.log(resolveValue[1]);
+            console.log(resolveValue[0]+resolveValue[1]);
+
+        })
+    </script>
+</body>
+</html>

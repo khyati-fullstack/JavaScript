@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .SubContainer .que
+        {
+            height: 30px;
+            background-color: gainsboro;
+        }
+        .SubContainer .ans
+        {
+            height: 30px;
+            background-color: paleturquoise;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainContainer">
+        
+        <div class="SubContainer">
+            <div class="que">
+                <h1>What is Html ?</h1>
+            </div>
+            <div class="ans">
+                <h1>Hyper text markup language</h1>
+            </div>
+        </div>
+
+        <div class="SubContainer">
+            <div class="que">
+                <h1>What is Css ?</h1>
+            </div>
+            <div class="ans">
+                <h1>Cascading Style Sheet</h1>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        var allQue = document.querySelectorAll(".SubContainer .que");
+
+        console.log(allQue);
+
+        allQue.forEach(function(que){
+            console.log(que);
+
+            que.addEventListener("click",function(){
+                //console.log("que is clciked");
+                var ans = this.nextElementSibling;
+                //console.log(ans);
+                console.log(ans.style.display);
+                if(ans.style.display === "block")
+                {
+                    ans.style.display = "none";
+                }
+                else
+                {
+                    ans.style.display = "block";
+                }
+            })
+        })
+    </script>
+</body>
+</html>

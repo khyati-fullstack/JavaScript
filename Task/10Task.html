@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 10</title>
+    <style>
+      .container {
+        margin: 0 auto;
+        width: 250px;
+        height: 250px;
+        text-align: center;
+        border: 1px solid black;
+      }
+      #clrbox {
+        margin: 0 auto;
+        border: 1px solid black;
+        height: 100px;
+        width: 200px;
+        margin-top: 20px;
+      }
+      input {
+        margin: 10px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="clrbox"></div>
+      <br />
+      <input type="text" name="msg" id="" />
+      <button onclick="colorEvent()">change color</button>
+      <button onclick="start()">Start</button>
+      <button onclick="stop()">stop</button>
+    </div>
+    <script>
+      let color = ["red", "green", "blue", "Yellow", "purple","pink", "grey"];
+      let boxclr = document.getElementById("clrbox");
+      let colorLength= 0;
+      // console.log(Color);
+      // console.log(Color[3]);
+      boxclr.style.background = color[colorLength];
+      function colorEvent() {
+        if (colorLength < color.length) {
+            colorLength++;
+          if (colorLength == 3) {
+            if(confirm("start")==true){
+              colorLength + 1;
+            } else {
+              colorLength = 0         
+            }
+          } else if(colorLength==color.length){
+            alert("end")
+          }
+        }
+        else {
+          colorLength = 0;
+        }
+        boxclr.style.background = color[colorLength];
+        // console.log(Color);
+
+        // if (colorLength ) {
+        //   boxclr.style.background = color[colorLength];          
+        // }
+      }
+      let Start;
+      function start() {
+      Start = setInterval(() => {
+            if (colorLength < color.length) {
+            colorLength++;
+          }
+         else {
+          colorLength = 0;
+        }
+        boxclr.style.background = color[colorLength];        
+        }, 1000);
+      }
+      function stop() {
+        clearInterval(Start);
+      }
+    </script>
+  </body>
+</html>

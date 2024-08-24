@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <div id="mydiv"></div>
+    <script>
+        
+        var input = document.createElement("input");
+        input.type = "text";
+        input.placeholder = "Enter your name : ";
+        input.name = "name";
+        input.id = "nameid";
+
+        var div = document.getElementById("mydiv");
+        div.append(input);
+
+        var btn = document.createElement("button");
+        btn.textContent = "Add";
+        btn.id = "btnadd";
+
+        //var h1 = document.createElement('h1');
+        div.appendChild(btn);
+        //div.appendChild(h1);
+
+        var ul = document.createElement("ul");
+        div.appendChild(ul);
+
+        btn.addEventListener("click",function(){
+            var yourname = document.getElementById("nameid").value;
+            //h1.textContent = yourname;
+            var li = document.createElement("li");
+            li.textContent = yourname;
+            ul.appendChild(li);
+
+            document.getElementById("nameid").value = "";
+        })
+
+    </script>
+</body>
+</html>

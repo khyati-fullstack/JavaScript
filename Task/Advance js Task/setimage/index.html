@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pi</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+                /* border: 1px solid black; */
+            margin: 50px auto;
+            height: 66vh;
+            width: 94%;
+        }
+        .mainimg img{
+            height: 100%;
+            width: 100%;
+        }
+        .mainimg{
+            border: 1px solid black;
+            width: 33%;
+            height: 66vh;
+        }
+        .puzzleimg{
+            display: flex;
+            border: 1px solid black;
+            width: 33%;
+            height: 66vh;
+        }
+        .mainbox{
+            display: flex;
+            border: 1px solid black;
+            width: 33%;
+            height: 66vh;
+        }
+        .pzlimg{
+            /* border: 1px solid black; */
+            height: 66vh;
+            width: 100%;
+        }
+        .pzlimg p{
+            border: 1px solid black;
+            height: 22vh;
+            width: 100%;
+        }
+         img{
+            /* border: 1px solid black; */
+            height: 123px;
+            width: 132px;
+        }
+        .imgbox p {
+            /* border: 1px solid black; */
+            height: 22vh;
+            width: 132px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="mainimg">
+            <img src="./img/fullimg.jpg" alt="">
+        </div>
+        <div class="puzzleimg">
+            <div class="pzlimg">
+                <p class="igbx" id="imgbx" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/img1.jpg" alt="" class="ib" id="imbx">
+                </p>
+                <p class="igbx" id="imgbx" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/img8.jpg" alt="" class="ib" id="imbx">
+                </p>
+                <p class="igbx" id="imgbx" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/img6.jpg" alt="" class="ib" id="imbx">
+                </p>
+            </div>
+            <div class="pzlimg">
+                <p class="igbx" id="imgbx" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/img4.jpg" alt="" class="ib" id="imbx">
+                </P>
+                <p class="igbx" id="imgbx" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/img5.jpg" alt="" class="ib" id="imbx">
+                </P>
+                <p class="igbx" id="imgbx" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/img3.jpg" alt="" class="ib" id="imbx">
+                </P>
+            </div>
+            <div class="pzlimg">
+                <p class="igbx" id="imgbx" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/img7.jpg" alt="" class="ib" id="imbx">
+                </P>
+                <p class="igbx" id="imgbx" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/img2.jpg" alt="" class="ib" id="imbx">
+                </P>
+                <p class="igbx" id="imgbx" draggable="true" ondragstart="drag(event)">
+                    <img src="./img/img9.jpg" alt="" class="ib" id="imbx">
+                </P>
+            </div>
+        </div>
+        <div class="mainbox">
+            <div class="imgbox">
+                <p class="mainbx" id="mnbx" ondragover="allowdrag(event)" ondrop="drop(event)"></p>
+                <p class="mainbx" id="mnbx" ondragover="allowdrag(event)" ondrop="drop(event)"></p>
+                <p class="mainbx" id="mnbx" ondragover="allowdrag(event)" ondrop="drop(event)"></p>
+            </div>
+            <div class="imgbox">
+                <p class="mainbx" id="mnbx" ondragover="allowdrag(event)" ondrop="drop(event)"></p>
+                <p class="mainbx" id="mnbx" ondragover="allowdrag(event)" ondrop="drop(event)"></p>
+                <p class="mainbx" id="mnbx" ondragover="allowdrag(event)" ondrop="drop(event)"></p>
+            </div>
+            <div class="imgbox">
+                <p class="mainbx" id="mnbx" ondragover="allowdrag(event)" ondrop="drop(event)"></p>
+                <p class="mainbx" id="mnbx" ondragover="allowdrag(event)" ondrop="drop(event)"></p>
+                <p class="mainbx" id="mnbx" ondragover="allowdrag(event)" ondrop="drop(event)"></p>
+            </div>
+        </div>
+        </div>
+
+    <script>
+        function drag(e)
+        {
+            e.dataTransfer.setData("text/plain",e.target.id);
+        }
+        function allowdrag (e)
+        {
+            e.preventDefault();
+        }
+        function  drop(e)
+        {
+            e.preventDefault();
+            let id = e.dataTransfer.getData("text/plain");
+            let element = document.getElementById(id);
+            e.target.append(element);
+
+        }
+
+        document.addEventListener("click",function(){
+            let images = document.querySelectorAll(".igbx")
+            console.log(images);
+            images.forEach(function (image) {
+                image.addEventListener("dragstart" , function(event){
+                    drag(event, image.id);
+                })
+            })
+        })
+    </script>    
+</body>
+</html>

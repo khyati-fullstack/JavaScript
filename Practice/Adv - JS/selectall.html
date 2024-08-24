@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="selectAllCheckbox">Select All<br><br>
+    <input type="checkbox" class="subject"> HTML <br>
+    <input type="checkbox" class="subject"> C++ <br>
+    <input type="checkbox" class="subject"> JAVA <br>
+    <input type="checkbox" class="subject"> PHP <br>
+
+    <script>
+        let selectAll = document.getElementById("selectAllCheckbox");
+        console.log(selectAll);
+
+        let subjecAll = document.querySelectorAll(".subject");
+        console.log(selectAll);
+
+        console.log(selectAll.checked);
+
+        selectAll.addEventListener("change",function () {
+            console.log("change")
+            console.log(selectAll.checked);
+            subjecAll.forEach(function (single_checkbox) {
+                single_checkbox.checked = selectAll.checked;
+            })
+            // if(selectAll.checked){
+            //     sujectAll.forEach(function(single_checkbox) {
+            //         single_checkbox.checked = true;
+            //     })
+            // }else 
+            // {
+            //     subjecAll.forEach(function (single_checkbox) {
+            //         single_checkbox.checked = false;
+                    
+            //     })
+            // }
+        })
+        subjecAll.forEach(function (single_checkbox) {
+            single_checkbox.addEventListener("change",function(){
+                console.log("chicked")
+                if(!single_checkbox.checked){
+                    selectAll.checked = false;
+                }
+                // else{
+                //     selectAll.checked = true
+                // }
+            })
+            
+        })
+
+
+    </script>
+</body>
+</html>

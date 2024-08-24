@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="textid" placeholder="Enter name" />
+    <input type="text" id="linkid" placeholder="Enter link" />
+    <ul id="myul"></ul>
+    <button onclick="addData()">Add</button>
+
+    <script>
+      function addData() {
+        var textname = document.getElementById("textid");
+        var linkvalue = document.getElementById("linkid");
+
+        var a = document.createElement("a");
+        a.textContent = textname.value;
+        a.setAttribute("href", linkvalue.value);
+
+        var li = document.createElement("li");
+        li.append(a);
+
+        var ul = document.getElementById("myul");
+        ul.append(li);
+      }
+    </script>
+  </body>
+</html>

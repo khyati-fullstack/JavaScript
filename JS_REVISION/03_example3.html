@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .myClass{
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h2>Welcome</h2>
+    <h1>JS</h1>
+
+    <button id="mybtn">Change</button>
+
+    <script>
+        var mybtnvar = document.getElementById("mybtn");
+        mybtnvar.addEventListener("click",function(){
+            var allh1 = document.querySelectorAll("h1");
+            // console.log(myh1[0].nodeName);
+
+            allh1.forEach(function(element){
+                // console.log(element);
+                element.classList.add("myClass");
+            })
+
+        })
+    </script>
+</body>
+</html>

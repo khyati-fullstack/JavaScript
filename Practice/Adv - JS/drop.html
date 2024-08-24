@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            margin: 20px;
+        }
+        .box1{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(16, 104, 104);
+            cursor: pointer;
+            margin: 10px;
+        }
+        .box2{
+            margin-top: 10px;
+            height: 150px;
+            width: 150px;
+            background-color: rgb(188, 215, 34);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="box1" id="itemcontainer" draggable="true" ondragstart="drag(event)"></div>
+    <div class="box2" id="maincontainer" ondragover="allowdrag(event)" ondrop="drop(event)"></div>
+    </div>
+
+    <script>
+        function drag(e)
+        {
+            e.dataTransfer.setData("text/plain",e.target.id);
+
+            e.dataTransfer.setData("text/html","<b>hello</b>");
+        }
+        function allowdrag (e)
+        {
+            e.preventDefault();
+        }
+        function  drop(e)
+        {
+            e.preventDefault();
+            let data = e.dataTransfer.getData("text/html");
+            console.log(data);
+
+            let d1 = document.createElement("div");
+            console.log(d1);
+            
+            d1.innerHtml = data;
+            console.log(d1);
+
+            e.target.append(d1);
+            let id = e.dataTransfer.getData("text/plain");
+            let element = document.getElementById(id);
+            e.target.append(element);
+
+        }
+    </script>
+</body>
+</html>

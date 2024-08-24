@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            border: 1px solid black;
+            height: 96vh;
+            margin: 10px;
+            display: flex;
+        }
+        #boximg{
+            margin: 5px;
+            border: 10px double black;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+         img{
+            height: 100%;
+            width: 100%;
+        }
+
+        .box2{
+            border: 1px double black;
+            margin: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 40%;
+        }
+        .box2 .bgimg{
+            border: 1px dotted black;
+            margin: 5px 6px;
+            height: 47%;
+            width: 22%;
+        }
+        .box2 .bgimg img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="boximg">
+            <img src="./img/img.png" alt="">
+        </div>
+        <div class="box2">
+            <div class="bgimg">
+                <img src="./img/bg1.jpg" alt="">
+            </div>
+            <div class="bgimg">
+                <img src="./img/bg2.jpg" alt="">
+            </div>
+            <div class="bgimg">
+                <img src="./img/bg3.jpg" alt="">
+            </div>
+            <div class="bgimg">
+                <img src="./img/bg4.jpg" alt="">
+            </div>
+            <div class="bgimg">
+                <img src="./img/bg5.jpg" alt="">
+            </div>
+            <div class="bgimg">
+                <img src="./img/bg6.jpg" alt="">
+            </div>
+            <div class="bgimg">
+                <img src="./img/bg7.jpg" alt="">
+            </div>
+            <div class="bgimg">
+                <img src="./img/bg8.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let boximg = document.getElementById("boximg");
+        console.log(boximg);
+        let totalimg = document.querySelectorAll(".bgimg img");
+        console.log(totalimg);
+        totalimg.forEach((elm) => {
+            elm.addEventListener("click",(e) => {
+                boximg.style.backgroundImage =`url("${e.target.src}")`;
+            })
+        })
+        
+
+
+    </script>
+</body>
+</html>

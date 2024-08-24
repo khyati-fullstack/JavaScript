@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .red
+        {
+            color: orange;
+        }
+        .blue
+        {
+            color: blue;
+        }
+        .purple
+        {
+            color: purple;
+        }
+        
+    </style>
+</head>
+<body>
+    <p class="mypara">THIS IS PARA 1</p>
+    <p class="mypara">THIS IS PARA 2</p>
+    <p class="mypara">THIS IS PARA 3</p>
+    <p class="mypara">THIS IS PARA</p>
+    <p class="mypara">THIS IS PARA</p>
+    <p class="mypara">THIS IS PARA</p>
+    <p class="mypara">THIS IS PARA</p>
+    <p class="mypara">THIS IS PARA</p>
+    <p class="mypara">THIS IS PARA</p>
+    <p class="mypara">THIS IS PARA</p>
+    <p class="mypara">THIS IS PARA</p>
+    <p class="mypara">THIS IS PARA</p>
+
+
+    <script>
+        var allPara = document.querySelectorAll("p");
+        console.log(allPara);
+        
+        allPara.forEach(function(e,i){
+            //console.log("index : "+i);
+            //console.log(e);
+            var classColorList= ["red","blue","purple","yellow"];
+            //console.log("--------------->>>"+classColorList[i]);
+
+            e.classList.add(classColorList[i%3]);
+
+            
+            //console.log("calculation ::: "+i%3);
+
+            console.log(0%3);
+            console.log(1%3);
+            console.log(2%3);
+            console.log(3%3);
+            console.log(4%3);
+            console.log(5%3);
+        })
+    </script>
+</body>
+</html>

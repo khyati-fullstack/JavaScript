@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="myid">click</button>
+    <h1 id="luckyid"></h1>
+
+    <script>
+        let abc = document.getElementById("myid");
+        abc.addEventListener("click",function () {
+            // let luckyno = Math.floor(Math.random() * 100) + 1;
+            let luckyno = Math.random() * 100 + 1;
+
+            console.log(abc);
+
+            // let h1 = document.getElementById("luckyid");
+            // h1.textContent = luckyno;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        form{
+            margin: 0 auto;
+            padding: 20px;
+            /* border: 1px solid black; */
+            width: 80%;
+        }
+        input{
+            margin: 0 auto;
+            width: 29%;
+            height: 30px;
+        }
+        .subme{
+            width: 10%;
+            height: 30px;
+        }
+        table{
+            border: 1px solid black;
+            margin: 0 auto;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="addData(event)">
+        <input type="text" id="nameid" placeholder="Enter Name">
+        <input type="text" id="subjectid" placeholder="Enter Subject">
+        <input type="text" id="cityid" placeholder="Enter City">
+        <input type="submit" value="submit" name="submit" class="subme"> 
+    </form>
+    <table border="">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>City</th>
+                <th colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+        function addData(e) {
+            e.preventDefault(); //not submit form
+
+            let tbody = document.getElementById("tbody");
+            tbody.innerHTML = "";
+
+            let name = document.getElementById("nameid");
+            // console.log(name.value);
+            let subject = document.getElementById("subjectid");
+            // console.log(subject.value);
+            let city = document.getElementById("cityid");
+            // console.log(city.value);
+
+            let existingData = JSON.parse(localStorage.getItem("student")) || [];
+            let id = existingData.length + 1;
+            console.log(existingData);
+
+            let obj = {id : id, name : name.value , subject : subject.value , city : city.value};
+            console.log(obj);
+
+            existingData.push(obj);
+            localStorage.setItem("student",JSON.stringify(existingData));
+            // getDataFromLocal();
+        }
+
+        function getDataFromLocal(){
+            let tbody = document.getElementById("tbody");
+            tbody.innerHTML = "";
+
+            let allData = JSON.parse(localStorage.getItem("student")) || [];
+        }
+    </script>
+</body>
+</html>

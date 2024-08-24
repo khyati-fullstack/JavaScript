@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .even
+        {
+            color: orange;
+        }
+        .odd
+        {
+            color: blue;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <p class="mypara">THIS IS PARA 1</p>
+    <p class="mypara">THIS IS PARA 2</p>
+    <p class="mypara">THIS IS PARA 3</p>
+    <p class="mypara">THIS IS PARA</p>
+    <p class="mypara">THIS IS PARA</p>
+    
+
+
+    <script>
+        var allPara = document.querySelectorAll("p");
+        console.log(allPara);
+        
+        allPara.forEach(function(e,i){
+            if(i%2==0)
+            {
+                e.classList.add("even");
+            }
+            else
+            {
+                e.classList.add("odd");
+            }
+        })
+    </script>
+</body>
+</html>

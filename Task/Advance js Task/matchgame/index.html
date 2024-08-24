@@ -1,0 +1,126 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Click Display</title>
+    <style>
+      .container {
+        margin-top: 20px;
+      }
+
+      button {
+        margin-right: 10px;
+      }
+
+      .display {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="button1">CHENNAI SUPER KINGS</button>
+      <button id="button2">DELHI CAPITALS</button>
+      <button id="button3">GUJARAT TITANS</button>
+      <button id="button4">MUMBAI INDIANS</button>
+    </div>
+
+    <div class="display" id="display"></div>
+
+    <script>
+      document.addEventListener("click", function () {
+        let buttons = document.querySelectorAll("button");
+        let display = document.getElementById("display");
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            display.textContent = ${this.textContent}.;
+          });
+        });
+      });
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Selection</title>
+    <style>
+      .container {
+        margin-top: 20px;
+      }
+
+      .team-input {
+        margin-bottom: 10px;
+      }
+
+      .match-display {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="team1" class="team-input" value="Team 1" />
+      <input type="text" id="team2" class="team-input" value="Team 2" />
+      <input type="text" id="team3" class="team-input" value="Team 3" />
+      <input type="text" id="team4" class="team-input" value="Team 4" />
+    </div>
+
+    <div class="match-display" id="matchDisplay"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const teamInputs = document.querySelectorAll(".team-input");
+        const matchDisplay = document.getElementById("matchDisplay");
+
+        for (let i = 0; i < teamInputs.length; i++) {
+          teamInputs[i].addEventListener("click", function () {
+            const selectedTeam = this.value;
+
+            // Create match display
+            const match = document.createElement("div");
+            match.classList.add("match");
+            match.innerHTML = selectedTeam + " vs ";
+
+            // Randomly select opponent
+            const opponents = Array.from(teamInputs);
+            opponents.splice(i, 1);
+            const randomOpponent =
+              opponents[Math.floor(Math.random() * opponents.length)].value;
+
+            // Create opponent display
+            const opponentMatch = document.createElement("div");
+            opponentMatch.classList.add("match");
+            opponentMatch.innerHTML = randomOpponent;
+
+            // Create Start Game button
+            const startButton = document.createElement("button");
+            startButton.textContent = "Start Game";
+            startButton.onclick = function () {
+              alert(
+                "Game started between " +
+                  selectedTeam +
+                  " and " +
+                  randomOpponent
+              );
+            };
+
+            // Append elements to match display
+            matchDisplay.appendChild(match);
+            matchDisplay.appendChild(opponentMatch);
+            matchDisplay.appendChild(startButton);
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

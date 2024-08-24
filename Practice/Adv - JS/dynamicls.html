@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dls</title>
+    <style>
+        table{
+            border: 1px solid black;
+            width: 60%;
+            margin: 10px;
+
+        }
+        tr,th,td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form  onsubmit="addData(event)">
+    <input type="text" id="nameid" placeholder="Enter name" />
+    <input type="text"  id="subjectid" placeholder="Enter subject" />
+    <input type="text"  id="cityid" placeholder="Enter city" />
+    <input type="submit" name="submit" value="submit" />
+    </form>
+<table border="">
+    <thead id="thead">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>City</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="tbody"></tbody>
+</table>
+
+    <script>
+        function addData(e) {
+            e.preventDefault();
+            let name = document.getElementById("nameid");
+            let subject = document.getElementById("subjectid");
+            let city = document.getElementById("cityid");
+
+            // console.log(name.value);
+
+            var existingData = JSON.parse(localStorage.getItem("student")) || [];
+            var id = existingData.length + 1;
+
+            console.log("...........>>>", existingData);
+
+            var obj = {
+                name : name.value, 
+                subject : subject.value , 
+                city : city.value
+            };
+            console.log(obj);
+
+            existingData.push(obj);
+            localStorage.setItem("student" , JSON.stringify(existingData));
+            getDataFromLocal();
+
+        }
+
+        function getDataFromLocal() {
+            let allData = JSON.parse(localStorage.getItem("student")) || [];
+            let tbody = document.getElementById("tbody");
+            for(let i = 0 ; i < allData.length ; i++)
+            {
+                let row = tbody.insertRow();
+                console.log(allData[i]);
+
+                let cell0 = row.insertCell(0);
+                let cell1 = row.insertCell(1);
+                let cell2 = row.insertCell(2);
+                let cell3 = row.insertCell(3);
+                let cell4 = row.insertCell(4);
+                let cell5 = row.insertCell(5);
+                // console.log(cell0);
+                // console.log(allData[i]);
+
+                cell0.textContent = allData[i].id;
+                cell1.textContent = allData[i].name;
+                cell2.textContent = allData[i].subject;
+                cell3.textContent = allData[i].city;
+                // cell4.textContent = allData[i].id;
+
+                cell4.innerHTML = "<Button class='btnedt' data-id='"+allData[i].id+"'> edit </Button>"
+                cell5.innerHTML = "<Button class='btndel' data-id='"+allData[i].id+"'> delete </Button>"
+
+            }
+
+            let allDelButton = document.querySelectorAll(".btndel");
+            console.log();
+        }
+    </script>
+</body>
+</html>

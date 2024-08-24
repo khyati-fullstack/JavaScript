@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- ASCII : American Standard Code for Information Interchange -->
+<body>
+    <script>
+        let num = 65;
+
+        let char = String.fromCharCode(num);
+
+        console.log(char);
+        document.write(char)
+
+        document.write("<hr>")
+
+        let num1 = 65
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write(String.fromCharCode(num1))
+            }
+            num1++;
+            document.write("<br>")
+        }
+
+        document.write("<hr>")
+
+        let num2 = 65
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                document.write(String.fromCharCode(num2))
+                num2++;
+            }
+            document.write("<br>")
+        }
+    </script>
+</body>
+</html>

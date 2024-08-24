@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condition In JS</title>
+  </head>
+  <body>
+    <button onclick="handleCheck()">Check</button>
+
+    <script>
+      // if Condition
+
+        function handleCheck() {
+          var marks = 1;
+          console.log(marks);
+          // alert("Hello");
+          if (marks == 10) {
+            alert("Yes you are right.");
+          }
+        }
+      // if else
+
+      function handleCheck() {
+          var marks = 10;
+          console.log(marks);
+          // alert("Hello");
+          if (marks == 10) {
+            alert("Hey buddy, you are right.");
+          }
+          else{
+              alert("Hey buddy, You are wrong!")
+          }
+        }
+
+      // if else if
+
+      let age = prompt("What's Your Age?", "");
+
+      if (age < 18 || age == 18 || age>15) {
+        // alert("Hey buddy, I'm sorry you are not eligible for driving.");
+        alert("age comes between 16 to 18.");
+      } else if (age > 18 && age <21) {
+        alert("Hey buddy, please take care of yourself. safe driving!");
+        // alert("Hey buddy, enjoy driving your own car. safe driving!");
+      } else {
+        alert("abhi aap bache hai");
+      }
+
+      console.log(parseFloat("123.456551515").toFixed(3));
+    </script>
+  </body>
+</html>

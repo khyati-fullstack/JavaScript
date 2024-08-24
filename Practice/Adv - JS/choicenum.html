@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chioce</title>
+</head>
+<body>
+    <h1>NUMBER GUSSEEING GAME</h1>
+    <h3>GUSSEE NUMBER BETWEEN 1 TO 100</h3>
+
+        <input type="number" id="inpid" />
+        <button id="btn">check</button>
+
+        <script>
+                let cmpchoice = Math.floor(Math.random() * 100) + 1;
+            document.getElementById("btn").addEventListener("click",function(){
+                let cmpchoice = Math.floor(Math.random() * 100) + 1;
+                console.log(cmpchoice);
+                let userchoice = document.getElementById("inpid").value;
+                console.log(userchoice);
+
+                if(userchoice < cmpchoice){
+                    console.log("lower");
+                }
+                else if(userchoice > cmpchoice){
+                    console.log("upper");
+                }
+                else 
+                {
+                    console.log("this is match");
+                }
+            });
+        </script>
+</body>
+</html>

@@ -6,6 +6,189 @@
     <title>DataType info</title>
 </head>
 <body>
-    
+    <h1>DataType</h1>
+    <span>two type datatype</span>
+    <ul>
+        <li>Premative</li>
+        <li>Non-premative</li>
+    </ul>
+
+    <h2>1. Premative</h2>
+    <ol>
+        <li>Boolean</li>
+        <span>
+            <br>
+        <h4><u>eg :</u></h4> 
+        let a = false <br>
+        console.log(a, typeof a); <br>
+        ans : false 'boolean' <br><br>
+        let aa = true <br>
+        console.log(aa, typeof aa); <br>
+        ans : true 'boolean'
+        </span>
+        <br> <br>
+
+        <li>Bigint</li>
+        <span>
+        <h4><u>eg :</u></h4> 
+        let b = 5n <br>
+        console.log(b, typeof b); <br>
+        ans : 5n 'bigint' ..(only n)
+        </span>
+        <br> <br>
+        <li>Number</li>
+        <span>
+        <h4><u>eg :</u></h4> 
+        let c = 56 <br>
+        console.log(c, typeof c); <br>
+        ans : 56 'number' 
+        </span>
+        <br> <br>
+
+        <li>Null</li>
+        <span>
+            <h4><u>eg :</u></h4> 
+            let d = null <br>
+            console.log(d, typeof d); <br>
+            ans : null 'object' (null)
+            </span>
+            <br> <br>
+
+        <li>Symbol</li>
+        <span>
+            <h4><u>eg :</u></h4> 
+            let e = Symbol("name")<br>
+            console.log(e, typeof e); <br>
+            ans : Symbol(name) 'symbol' 
+            </span>
+            <br> <br>
+        <li>String</li>
+        <span>
+            <h4><u>eg :</u></h4> 
+            let f = "Hello"<br>
+            console.log(e, typeof e); <br>
+            ans : Hello 'string' 
+            </span>
+            <br> <br>
+        <li>Undefiend</li>
+        <span>
+            <h4><u>eg :</u></h4> 
+            let g;<br>
+            console.log(g, typeof g); <br>
+            ans :  undefiend 'undefiend'
+            </span>
+    </ol>
+    <script>
+
+        let a = false
+        console.log(a, typeof a);
+        let aa = true
+        console.log(aa, typeof aa);
+        
+        let b = 5n;
+        console.log(b, typeof b);
+
+        let c = 56;
+        console.log(c, typeof c);
+        
+        let d = null;
+        console.log(d, typeof d);
+
+        let e = Symbol("name");
+        console.log(e, typeof e);
+
+        let f = "Hello";
+        console.log(f, typeof f);
+
+        let g;
+        console.log(g, typeof g)
+
+    </script>
+    <hr>
+    <h2>2. Non-premative</h2>
+    <ol>
+        <li>Object</li>
+        <span>
+            <h4><u>eg :</u></h4>
+            let state = {<br>
+                Gujarat : 1, <br>
+                Rajasthan : 2 <br>
+            }; <br>
+            console.log(state, typeof state); <br>
+            ans : {Gujarat : 1,Rajasthan : 2} object.
+            <br>
+            <h4><u>eg :</u></h4>
+            let state = {<br>
+                Gujarat <br>
+                Rajasthan <br>
+            }; <br>
+            console.log(state, typeof state); <br>
+            ans : error
+            <br>
+            <h4><u>eg :</u></h4>
+            let state = {<br>
+               1 : Gujarat <br>
+               2 : Rajasthan <br>
+            }; <br>
+            console.log(state, typeof state); <br>
+            ans : error
+            <br>
+            <h4><u>eg :</u></h4>
+            let state = {<br>
+               Gujarat : Gujarat <br>
+               Rajasthan : Rajasthan <br>
+            }; <br>
+            console.log(state, typeof state); <br>
+            ans : error
+            <br>
+            <h4><u>eg :</u></h4>
+            let state = [<br>
+               Gujarat : 1 <br>
+               Rajasthan : 2 <br>
+            ]; <br>
+            console.log(state, typeof state); <br>
+            ans : error
+        </span> <br> <br>
+        <li>Array</li>
+        <span>
+            <h4><u>eg :</u></h4> 
+            let sub = ["english", "gujarati", "hindi"];<br>
+            console.log(sub, typeof sub);<br>
+            ans : (3){'english','gujarati','hindi'} 'object'
+            <h4><u>eg :</u></h4> 
+            let sub = ["english", "gujarati", "hindi"];<br>
+            console.log(Array.isArray(sub));<br>
+            ans : true
+            <h4><u>eg :</u></h4> 
+            let sub = [english, gujarati, hindi];<br>
+            console.log(sub, typeof sub);<br>
+            ans : error
+        </span>
+    </ol>
+        <script>
+            let state = {
+                Gujarat : 1,
+                Rajasthan : 2
+            };
+            console.log(state, typeof state);
+            
+            let sub = ["english", "gujarati", "hindi"];
+            console.log(sub, typeof sub);
+            let subnm = ["english", "gujarati", "hindi"];
+            console.log(Array.isArray(subnm));
+
+        </script>
+       <!-- //non-premative
+
+
+       let marks = {
+            eng : 35,
+            guj : 35 
+       };
+       console.log(marks,typeof marks);
+
+       let name = ["k", "b"]
+       console.log(Array.isArray(name));
+    </script> -->
 </body>
 </html>

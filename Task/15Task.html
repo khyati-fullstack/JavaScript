@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <div>
+        <div class="container" onclick="mcqPaper()">
+        <p>1. What does the abbreviation HTML stand for?</p>
+        <input type="radio" name="que1" id="aa">HyperText Markup Language. <br>
+        <input type="radio" name="que1" id="bb">HighText Markup Language. <br>
+        <input type="radio" name="que1" id="cc">HyperText Markdown Language. <br>
+        <input type="radio" name="que1" id="dd">None of the above.
+        </div> 
+        <div class="container" onclick="mcqPaper()">       
+        <p>2. How many sizes of headers are available in HTML by default?</p>
+        <input type="radio" name="que2" id="ee">5 <br>
+        <input type="radio" name="que2" id="ff">1 <br>
+        <input type="radio" name="que2" id="gg">3 <br>
+        <input type="radio" name="que2" id="hh">6
+        </div> 
+        <div class="container" onclick="mcqPaper()">               
+        <p>3. What is the smallest header in HTML by default?</p>
+        <input type="radio" name="que3" id="">h1 <br>
+        <input type="radio" name="que3" id="">h2 <br>
+        <input type="radio" name="que3" id="">h6 <br>
+        <input type="radio" name="que3" id="">h4
+        </div> 
+        <div class="container" onclick="mcqPaper()">                       
+        <p>4. What are the types of lists available in HTML?</p>
+        <input type="radio" name="que4" id="">Order, Unordered Lists.<br>
+        <input type="radio" name="que4" id="">Bulleted, Numbered Lists. <br>
+        <input type="radio" name="que4" id="">Named, Unnamed Lists. <br>
+        <input type="radio" name="que4" id="">None of the above.
+        </div> 
+        <div class="container" onclick="mcqPaper()">                               
+        <p>5. How to create an ordered list in HTML?</p>
+        <input type="radio" name="que5" id=""> <"ul"> <br>
+        <input type="radio" name="que5" id=""> <"ol"> <br>
+        <input type="radio" name="que5" id=""> <"href"> <br>
+        <input type="radio" name="que5" id=""> <"b">
+        </div> 
+    </div>
+
+    <script>
+        function mcqPaper(){
+            let aaa = document.getElementById("aa").value;
+            let bbb = document.getElementById("bb").value;
+            let ccc = document.getElementById("cc").value;
+            let ddd = document.getElementById("dd").value;
+
+            if (aaa){
+                console.log("right");
+            }else if(bbb){
+                console.log("wrong");
+            }else if(ccc){
+                console.log("wrong");
+            }else if(ddd){
+                console.log("wrong");
+            }else{
+                console.log("r");
+            }
+
+            // if (aaa === aa){
+            //     console.log("right");
+            // }else if(bbb === bb){
+            //     console.log("wrong");
+            // }else if(ccc === cc){
+            //     console.log("wrong");
+            // }else if(ddd === dd){
+            //     console.log("wrong");
+            // }else{
+            //     console.log("r");
+            // }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="nameid" placeholder="Enter your name" />
+    <button id="btnadd" onclick="addData()">ADD</button>
+
+    <ul id="myul"></ul>
+
+    <script>
+      var myarr = [];
+
+      let value = document.getElementById("nameid");
+      function addData() {
+        // console.log(value);
+        // myarr.push(value);
+        myarr.unshift(value.value);
+        // console.log(myarr);
+
+        renderData(); //calling
+      }
+
+      function renderData() {
+        // console.log(document.querySelector("#myul"));
+        var ul = document.querySelector("#myul");
+        ul.innerHTML = "";
+        value.value = "";
+        myarr.forEach(function (e, i) {
+          var li = document.createElement("li");
+          li.textContent = e;
+          li.addEventListener("click", () => {
+            // myarr.filter((elm) => elm !== e);
+            myarr = myarr.filter((item) => item !== e);
+            // myarr.splice(i, 1);
+            console.log(myarr);
+            renderData();
+          });
+          ul.append(li);
+        });
+      }
+    </script>
+  </body>
+</html>

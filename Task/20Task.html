@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reverseWords(sentence) {
+  // Split the sentence into an array of words
+  const wordsArray = sentence.split(' ');
+
+  // Reverse the array of words
+  const reversedWordsArray = wordsArray.reverse();
+
+  // Join the reversed array of words into a string
+  const reversedSentence = reversedWordsArray.join(' ');
+
+  return reversedSentence;
+}
+
+// Example usage:
+const sentence = "Hello world! How are you?";
+const reversedSentence = reverseWords(sentence);
+console.log(reversedSentence); // Output: "you? are How world! Hello"
+
+    </script>
+</body>
+</html>

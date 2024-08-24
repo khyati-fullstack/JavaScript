@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        subjectList = ["c" , "c++" , "java"]
+
+        subjectList.forEach((item) => {
+            console.log(item);
+        });
+        subjectList.map(function(item){
+            console.log(item);
+        });
+
+        let mynum = [1,2,3,4,5];
+
+        mynum.forEach((num) => {
+            console.log(num);
+        });
+
+        let res = mynum.map((num) => num*2)
+        console.log(res);
+    </script>
+</body>
+</html>

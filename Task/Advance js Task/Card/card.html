@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+    /* #main{
+        height: 10vh;
+        width: 100%;
+        margin: 30px auto;
+        align-items: center;
+    } */
+    .box{
+        height: 300px;
+        width: 250px;
+        background-color: aqua;
+        border-radius: 10px;
+        position: absolute;
+        top: 30px;
+        border: 1px solid black;
+        text-align: center;
+        /* transform: rotate(5deg); */
+
+    }
+    .box1{
+        background-color: antiquewhite;
+        left: 300px;
+    }
+    .box2{
+        background-color: red;
+        left: 350px;
+    }
+    .box3{
+        background-color: green;
+        left: 400px;
+    }
+    .box4{
+        background-color: gray;
+        left: 450px;
+    }
+    .box5{
+        background-color: yellow;
+        left: 500px;
+    }
+    .box1:hover{
+        transform: rotate(15deg);
+        transition: 1s;
+    }
+    .box2:hover{
+        transform: rotate(15deg);
+        transition: 1s;
+
+    }
+    .box3:hover{
+        transform: rotate(15deg);
+        transition: 1s;
+
+    }
+    .box4:hover{
+        transform: rotate(15deg);
+        transition: 1s;
+
+    }
+    .box5:hover{
+        transform: rotate(15deg);
+        transition: 1s;
+
+    }
+    
+</style>
+<body>
+    <div id="main">
+        <div class="box1 box">box-1</div>
+        <div class="box2 box">box-2</div>
+        <div class="box3 box">box-3</div>
+        <div class="box4 box">box-4</div>
+        <div class="box5 box">box-5</div>
+    </div>
+</body>
+<script>
+    let main = document.getElementById("main");
+    let box = document.querySelector(".box");
+    let box1 = document.querySelector(".box1");
+    let box2 = document.querySelector(".box2");
+    let box3 = document.querySelector(".box3");
+    let box4 = document.querySelector(".box4");
+    let box5 = document.querySelector(".box5");
+
+    box.addEventListener("click",function () {
+        
+
+    })
+  
+
+</script>
+</html>
